@@ -2,7 +2,7 @@
 .container.viz-cntr
     .container.text-start
         h1.text-white.ms-4.mt-4 San Francisco
-        p.text-warning.text-opacity-75.ms-4 Monthly Average High Temperature for 2019
+        p.text-warning.text-opacity-75.ms-4 Monthly Average High Temperature for 2021
         hr.text-white
     .container#chart
         svg
@@ -30,7 +30,7 @@ export default {
                 .interpolator(d3.interpolateViridis)
 
             const xScale = d3.scaleTime()
-                .domain([new Date(2019, 0), new Date(2019, `${data_length - 1}`)])
+                .domain([new Date(2021, 0), new Date(2021, `${data_length - 1}`)])
                 .range([50, `${svg_width - 50}`])
 
             const yScale = d3.scaleLinear()
@@ -41,7 +41,7 @@ export default {
                 .selectAll("circle")
                 .data(yearSFTempData)
                 .join("circle")
-                .attr("cx", (d, i)=> xScale(new Date(2019, i)))
+                .attr("cx", (d, i)=> xScale(new Date(2021, i)))
                 .attr("cy", (d) => yScale(d))
                 .attr("r", 10)
                 .attr("fill", d => colorScale(d))
@@ -55,7 +55,7 @@ export default {
                 .selectAll("text")
                 .data(yearSFTempData)
                 .join("text")
-                .attr("x", (d, i)=> xScale(new Date(2019, i)) - 20)
+                .attr("x", (d, i)=> xScale(new Date(2021, i)) - 20)
                 .attr("y", 25)
                 .attr("fill", (d, i) => seqScale(d))
                 .html((d, i) => `${monthNames[i]}-${d}&#176`)
