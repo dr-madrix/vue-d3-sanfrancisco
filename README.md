@@ -1,5 +1,9 @@
 # d3-sanfrancisco
 
+## Deployment Link
+
+Puedes ver cómo quedó esta viz dando click aquí:  https://sanfrancisco-vued3-6b7392.netlify.app/
+
 ## Project setup
 ```
 npm install
